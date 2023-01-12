@@ -1,0 +1,30 @@
+## 1.0.0版本
+* Mytools_Save目录下主程序为Real-time-save.py，用于保存利用IWR6843AOPEVM采集的ADC原始数据
+* Mytools_readbin目录下主程序为readDCA1000.py，用于读取保存下来的.bin原始数据文件，并对其绘图，绘制RD图
+* 采用的配置文件名字为：iwr6843_udp.cfg
+
+## 1.0.1版本
+* 配置文件阅读功能，根据配置文件自动获取ADCSamples ，Chirp per Frame ,RX数等
+* 增加修正功能在readDCA1000.py中，与matlab版本数据保持一致
+
+## 1.0.2版本
+* 增加Mytools_OnLine，Mytools_OffLine文件夹。Mytools_OffLine文件夹下cut.py对应matlab，cut.m的代码。目前版本缺少滤波器，分离呼吸心跳信号，与运动片段去除
+* 在Mytools_OffLine文件夹中包含数据修正代码 第80-89行
+* 在config文件夹下有配置文件的原始说明
+
+## 1.1.0版本
+* 滤波器，分离呼吸心跳信号代码已经加入Mytools_OffLine文件夹下cut.py，与matlab离线数据保持一致
+* 将绘图调整为计算结束后统一绘图
+
+## 1.2.0版本
+* Mytools_OnLine增加了所有Mytools_OffLine的代码，目前是无界面版本
+
+## 1.3.0版本
+* 增加了Mytools_OffLine代码，同于判断接受的数据是否是多发送天线模式
+* 增加了配置文件iwr6843_fps20.cfg，该配置文件用于多发多收，并且数据量大
+* 增加了Mytools_OnLine中Real-time-hb.py中最后部分计算出结果的代码
+
+## 2.0.0版本
+* 1000帧为长度，超过1000帧Real-time-save.py会保存，并清空内存中的数据
+* 增加Mytools_Gui文件夹，用来保存带界面的实时程序
+* 修改cut.py代码增加了横轴的时间值，从采样点值变成时间值
